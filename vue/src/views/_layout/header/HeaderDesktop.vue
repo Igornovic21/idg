@@ -18,7 +18,7 @@
           <img src="@/assets/images/Logo.png" alt="Accueil" class="Header__appLogo" />
         </div>
         <nav class="Header__navBlock Header__navBlock--right">
-          <v-tabs v-model="appStore.activeTab" align-tabs="end" color="main-red">
+          <v-tabs v-model="appStore.activeTab" align-tabs="end" color="main-yellow">
             <v-tab
               v-for="(tab, index) in NavigationTabsService.getContent()"
               :value="tab.value"
@@ -28,7 +28,7 @@
               <span class="Header__tabsText">{{ tab.name }}</span>
             </v-tab>
           </v-tabs>
-          <v-btn base-color="white" class="text-main-blue mr-3 gap-5" to="/map" flat>
+          <v-btn base-color="main-blue" class="text-white mr-3 gap-5" to="/map" flat>
             <img
               src="@/assets/images/icons/add_location_alt.svg"
               alt="Accueil"
@@ -52,76 +52,80 @@ const appStore = useApplicationStore()
 
 <style lang="scss">
 .Header {
-  &--desktop {
-    $dim-logo: 10rem;
-
-    &::after {
-      width: 50vw;
-      min-height: 50rem;
-      height: 80vh;
-    }
-
-    .Header__banner {
-      background: rgb(var(--v-theme-main-yellow));
-
-      .Header__bannerContent {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding: 0 1rem;
-        color: rgb(var(--v-theme-main-blue));
-        height: var(--dim-banner-h);
-
-        .Header__bannerLink {
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: center;
-          text-decoration: none;
-          color: rgb(var(--v-theme-main-blue));
-          gap: 0.375rem;
-          font-size: $font-size-xs;
-
-          span {
-            margin-top: 0.125rem;
-          }
+    &--desktop {
+        $dim-logo: 10rem;
+    
+        &::after {
+            width: 150vw;
+            min-height: 50rem;
+            height: 120vh;
         }
-      }
-    }
 
-    .Header__nav {
-      background: linear-gradient(to top, transparent 0%, rgb(var(--v-theme-light-yellow)) 100%);
-      height: $dim-logo;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+        .Header__banner {
+            background: rgb(var(--v-theme-main-blue));
+            
+            .Header__bannerContent {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                padding: 0 1rem;
+                color: rgb(var(--v-theme-main-white));
+                height: var(--dim-banner-h);
 
-      .Header__navContent {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-flow: row nowrap;
+                .Header__bannerLink {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    text-decoration: none;
+                    color: rgb(var(--v-theme-main-white));
+                    gap: .375rem;
+                    font-size: $font-size-xs;
 
-        .Header__navBlock {
-          &--left {
-            .Header__appLogo {
-              z-index: 10;
-              position: relative;
-              height: $dim-logo;
-              transform: translateY(calc(-1 * var(--dim-banner-h)));
+                    span {
+                        margin-top: .125rem;
+                    }
+                }
             }
-          }
-
-          &--right {
-            flex: 1 0 auto;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 20px 0 10px 0;
-          }
         }
-      }
+
+        .Header__nav {
+           /*  background: linear-gradient(to top,
+                    transparent 0%,
+                    rgb(var(--v-theme-light-blue)) 100%); */
+            height: $dim-logo;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            
+            .Header__navContent {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-flow: row nowrap;
+
+                .Header__navBlock {
+                    &--left {
+                        .Header__appLogo {
+                            z-index: 10;
+                            position: relative;
+                            margin-top: 10px;
+                            height: $dim-logo;
+                            border-radius: 50%;
+                            transform: translateY(calc(-1 * var(--dim-banner-h)));
+                        }
+                    }
+
+                    &--right {
+                        flex: 1 0 auto;
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: flex-end;
+                        align-items: center;
+                        padding: 20px 0 10px 0;
+                    }
+                }
+            }
+        }
     }
-  }
 }
 </style>

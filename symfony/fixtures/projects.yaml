@@ -1,5 +1,5 @@
 App\Entity\Project:
-  project_{1..500}:
+  project_{1..333}:
     name: '@geoData_<current()>->name Urban Development'
     status: '<randomElement(<(App\Enum\Status::toArray())>)>'
     description: <text(500)>

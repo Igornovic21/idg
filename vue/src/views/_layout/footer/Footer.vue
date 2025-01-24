@@ -4,90 +4,37 @@
       <div class="Footer__blocks">
         <div class="Footer__block Footer__block--left">
           <div class="Footer__contact">
-            <h4 class="Footer__title">{{ $t('footer.contact') }}</h4>
-            <div class="Footer__contactLogos">
-              <img
-                src="@/assets/images/footer/facebook.svg"
-                alt="facebook"
-                class="Footer__contactImg ml-8"
-              />
-              <img
-                src="@/assets/images/footer/linkedin.svg"
-                alt="linkedin"
-                class="Footer__contactImg"
-              />
-              <img
-                src="@/assets/images/footer/twitter.svg"
-                alt="twitter"
-                class="Footer__contactImg"
-              />
-              <img
-                src="@/assets/images/footer/instagram.svg"
-                alt="instagram"
-                class="Footer__contactImg"
-              />
-            </div>
+              <h4 class="Footer__title">{{ $t('footer.contact') }}</h4>
+              <div class="Footer__contactLogos">
+                  <img src="@/assets/images/footer/facebook.svg" alt="facebook" class="Footer__contactImg ml-8">
+                  <img src="@/assets/images/footer/linkedin.svg" alt="linkedin" class="Footer__contactImg">
+                  <img src="@/assets/images/footer/twitter.svg" alt="twitter" class="Footer__contactImg">
+                  <img src="@/assets/images/footer/instagram.svg" alt="instagram" class="Footer__contactImg">
+              </div>
           </div>
           <div class="Footer__adressCtn">
-            <v-icon icon="mdi-map-marker-outline"></v-icon>
-            <div class="Footer__adress">
-              <span class="font-weight-medium">Bureau d'Expertise France au Cameroun</span>
-              <span>Quartier Golf Bastos</span>
-              <span>Rue 6.083 Bld Jean Paul II</span>
-              <span>Yaoundé</span>
-            </div>
+              <v-icon icon="mdi-map-marker-outline"></v-icon>
+              <div class="Footer__adress">
+                  <span class="font-weight-medium">Bureau de la communauté urbaine de Douala</span>
+                  <span>Quartier Bonandjo</span>
+                  <span>Place de l'hotel de ville</span>
+                  <span>Douala</span>
+              </div>
           </div>
           <div class="Footer__adressCtn">
-            <v-icon icon="mdi-phone-outline"></v-icon>
-            <div class="Footer__adress">
-              <span>00 237 6 52 26 66 18</span>
-            </div>
+              <v-icon icon="mdi-phone-outline"></v-icon>
+              <div class="Footer__adress">
+                  <span>00 237 6 97 70 97 18</span>
+              </div>
           </div>
-          <v-btn
-            color="main-blue"
-            class="Footer__btn"
-            variant="flat"
-            prepend-icon="mdi-email-outline"
-            append-icon="mdi-arrow-right"
-            >{{ $t('footer.email') }}</v-btn
-          >
+          <v-btn color="main-yellow" class="Footer__btn" variant="flat" prepend-icon="mdi-email-outline" append-icon="mdi-arrow-right">{{ $t('footer.email') }}</v-btn>
+      
         </div>
         <div class="Footer__block Footer__block--right">
           <h4 class="Footer__title">{{ $t('footer.partners') }}</h4>
           <div class="Footer__partnersLogos">
-            <img src="@/assets/images/footer/cameroun_flag.svg" alt="cameroun flag" />
-            <a href="https://www.eeas.europa.eu/delegations/cameroun_fr?s=88" target="_blank"
-              ><img src="@/assets/images/footer/logo_ue.png" alt="union-europeenne"
-            /></a>
-            <a href="https://www.expertisefrance.fr/fiche-projet?id=882931" target="_blank"
-              ><img src="@/assets/images/footer/logo_ef.png" alt="expertise-france"
-            /></a>
-          </div>
-          <div class="Footer__secondaryPartnersLogos">
-            <a href="https://www.minhdu.gov.cm/" target="_blank"
-              ><img src="@/assets/images/footer/minhdu.png" alt="minhdu"
-            /></a>
-            <a href="https://www.minddevel.gov.cm" target="_blank"
-              ><img src="@/assets/images/footer/mindevel.png" alt="minddevel"
-            /></a>
-            <a href="https://cvuc-uccc.com" target="_blank"
-              ><img src="@/assets/images/footer/cvuc.png" alt="cvuc"
-            /></a>
-            <a href="" target="_blank"
-              ><img src="@/assets/images/footer/asso_cameroun.png" alt="asso_cameroun"
-            /></a>
-            <a href="https://minepat.gov.cm/fr/accueil" target="_blank"
-              ><img src="@/assets/images/footer/minepat.png" alt="minepat"
-            /></a>
-            <a href="https://yaounde.cm" target="_blank"
-              ><img src="@/assets/images/footer/yaounde.png" alt="yaounde"
-            /></a>
-            <a href="https://tresorpublic.cm/fr/ministries/mindcaf" target="_blank"
-              ><img src="@/assets/images/footer/mindcaf.png" alt="mindcaf"
-            /></a>
-            <a href="https://www.facebook.com/groups/2611030598941314" target="_blank"
-              ><img src="@/assets/images/footer/maroua.png" alt="maroua"
-            /></a>
+              <img src="@/assets/images/footer/cameroun_flag.svg" alt="cameroun flag">
+              <img src="@/assets/images/footer/cameroun_flag.svg" alt="cameroun flag">
           </div>
         </div>
       </div>
@@ -115,7 +62,7 @@
   &::after {
     content: '';
     z-index: -1;
-    background: linear-gradient(to top, transparent 0%, rgb(var(--v-theme-light-yellow)) 100%);
+    background: linear-gradient(to top, transparent 0%, rgb(var(--v-theme-light-blue)) 100%);
     position: absolute;
     inset: 0;
     height: 8rem;

@@ -5,27 +5,24 @@
         <v-icon
           :icon="'mdi mdi-' + $t('kpi.' + kpi.key + '.icon')"
           size="x-large"
-          color="main-green"
-        />
+          color="main-blue" />
       </div>
       <div class="Kpi__infoCtn">
         <div class="Kpi__count">{{ kpi.count }}</div>
         <div class="Kpi__label">{{ $t('kpi.' + kpi.key + '.label', kpi.count) }}</div>
       </div>
     </div>
-    <div class="Kpi__block Kpi__block--description" v-if="showDescription">
-      {{ $t('kpi.' + kpi.key + '.description') }}
-    </div>
+    <div class="Kpi__block Kpi__block--description" v-if="showDescription">{{ $t('kpi.' + kpi.key + '.description') }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Kpi } from '@/models/interfaces/Kpi'
+import type { Kpi } from '@/models/interfaces/Kpi';
 
 defineProps<{
-  kpi: Kpi
-  showDescription?: boolean
-}>()
+  kpi: Kpi,
+  showDescription?: boolean,
+}>();
 </script>
 
 <style lang="scss">
@@ -47,19 +44,19 @@ defineProps<{
         justify-content: center;
         align-items: center;
         $dim-icon: 3.5rem;
-        background-color: rgb(var(--v-theme-light-yellow));
+        background-color: rgb(var(--v-theme-main-yellow));
         width: $dim-icon;
         min-width: $dim-icon;
         height: $dim-icon;
         border-radius: 50%;
       }
-
+    
       .Kpi__infoCtn {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 0.25rem;
-
+        gap: .25rem;
+    
         .Kpi__count {
           font-family: $font-primary;
           font-size: 2.75rem;
@@ -67,7 +64,7 @@ defineProps<{
           font-weight: 700;
           color: rgb(var(--v-theme-main-blue));
         }
-
+      
         .Kpi__label {
           font-size: 1.5rem;
         }

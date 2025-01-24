@@ -98,7 +98,7 @@
               </div>
             </div>
             <a href="#" class="hide-sm">{{ $t('account.deleteAccount') }}</a>
-            <v-btn type="submit" color="main-red hide-sm" :loading="isSubmitting" class="w-100">{{
+            <v-btn type="submit" color="main-yellow hide-sm" :loading="isSubmitting" class="w-100">{{
               $t('account.save')
             }}</v-btn>
           </div>
@@ -116,7 +116,7 @@
               />
             </div>
             <a href="#" class="show-sm">{{ $t('account.deleteAccount') }}</a>
-            <v-btn type="submit" color="main-red show-sm" :loading="isSubmitting" class="w-100">{{
+            <v-btn type="submit" color="main-yellow show-sm" :loading="isSubmitting" class="w-100">{{
               $t('account.save')
             }}</v-btn>
             <BasicCard icon="mdi-pencil-outline" class="mt-6">
@@ -339,7 +339,7 @@ import { useResourceStore } from '@/stores/resourceStore'
       }
     }
     &--avatarErrorMessage {
-      color: rgb(var(--v-theme-main-red));
+      color: rgb(var(--v-theme-main-yellow));
       font-size: $font-size-xs;
     }
     &__avatarEdit {

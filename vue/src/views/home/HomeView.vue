@@ -58,12 +58,12 @@ onMounted(async () => await homeStore.getGlobalKpis())
     display: flex;
     flex-flow: column nowrap;
     margin: 4rem 0 4rem 0;
-    gap: 0.5rem;
+    gap: .5rem;
     &--main {
       flex-flow: row nowrap;
       gap: 3rem;
       margin: 0;
-
+      
       .HomeView__mainContent {
         display: flex;
         flex-flow: column nowrap;
@@ -74,6 +74,7 @@ onMounted(async () => await homeStore.getGlobalKpis())
           flex-flow: column nowrap;
           gap: 1rem;
           align-items: flex-start;
+          
         }
       }
       .HomeView__mainImagesCtn {
@@ -86,27 +87,29 @@ onMounted(async () => await homeStore.getGlobalKpis())
       }
     }
     &--map {
-      background-color: rgb(var(--v-theme-light-yellow));
+      background-color: rgb(var(--v-theme-light-blue));
       padding: 4rem 0rem;
       overflow: hidden;
       position: relative;
 
       &::after {
-        content: '';
+        content: "";
         right: 0;
         z-index: 1;
         pointer-events: none;
         background-size: contain;
-        top: 0;
+        top: -120px;
         background-image: url('@/assets/images/roads_iconography.svg');
         background-position: top right;
         position: absolute;
-        width: 70vw;
+        width: 150vw;
         min-height: 50rem;
-        height: 80vh;
+        margin-right: -200px;
+        height: 110vh;
       }
 
       > * {
+
         z-index: 2;
       }
     }
@@ -115,6 +118,7 @@ onMounted(async () => await homeStore.getGlobalKpis())
 
 @media (max-width: $bp-xl) {
   .HomeView {
+
     .HomeKpis,
     .HomeMapDescription__mapImg,
     .HomeBecomeMember {
@@ -153,7 +157,7 @@ onMounted(async () => await homeStore.getGlobalKpis())
           width: 100%;
           background-size: 40rem;
         }
-      }
+      } 
     }
   }
 }

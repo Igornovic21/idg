@@ -53,9 +53,11 @@ defineProps<{
             $dim-icon-w: 1.5rem;
             width: $dim-icon-w;
             height: $dim-icon-w;
-            background: rgb(var(--v-theme-main-green));
+            //background: rgb(var(--v-theme-main-yellow));
+            background: rgb(var(--v-theme-main-blue));
             border-radius: 50%;
-            color: white;
+            //color:  rgb(var(--v-theme-main-blue));
+            color:  white
         }
     }
 }

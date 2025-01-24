@@ -1,5 +1,5 @@
 <template>
-  <div class="ListSearchBar bg-main-yellow">
+  <div class="ListSearchBar bg-main-blue">
     <v-text-field
       v-model="searchQuery"
       variant="solo"

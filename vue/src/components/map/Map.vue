@@ -20,8 +20,7 @@ const props = withDefaults(
     bounds?: maplibregl.LngLatBounds
   }>(),
   {
-    bounds: () =>
-      new maplibregl.LngLatBounds([8.48881554529, 1.72767263428], [16.0128524106, 12.8593962671])
+    bounds: () => new maplibregl.LngLatBounds([9.3361339, 3.8856846], [ 9.8644121, 4.2252363])
   }
 )
 const popup = ref(new maplibregl.Popup({ closeOnClick: false }))
@@ -29,10 +28,10 @@ const hoveredFeatureId: Ref<string | null> = ref(null)
 const activeFeatureId: Ref<string | null> = ref(null)
 
 onMounted(() => {
-  const apiKey = import.meta.env.VITE_MAPTILER_API_KEY
+  //const apiKey = import.meta.env.VITE_MAPTILER_API_KEY
   map.value = new maplibregl.Map({
     container: 'map',
-    style: `https://api.maptiler.com/maps/openstreetmap/style.json?key=${apiKey}`,
+    style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=HcIfhRHjeTAYtM7kuhvr',
     center: [0, 0],
     zoom: 1,
     attributionControl: false
@@ -140,7 +139,7 @@ const flyTo = (coordinates: maplibregl.LngLatLike) => {
   if (map.value == null) return
   map.value.flyTo({
     center: coordinates,
-    zoom: 7,
+    zoom: 12,
     speed: 0.5
   })
 }

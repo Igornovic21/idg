@@ -10,7 +10,7 @@
           :to="{ query: { ...$route.query, dialog: DialogKey.AUTH_FORGOT_PASSWORD_OK } }"
           class="Link--withoutUnderline"
         >
-          <v-btn color="main-red" type="submit" block>{{
+          <v-btn color="main-blue" type="submit" block>{{
             $t('auth.forgotPassword.form.submit')
           }}</v-btn>
         </router-link>

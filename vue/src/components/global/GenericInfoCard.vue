@@ -31,7 +31,7 @@
       <v-icon
         class="InfoCard__actionIcon"
         :icon="actionIcon ?? 'mdi-open-in-new'"
-        color="light-blue"
+        color="main-blue"
       ></v-icon>
     </template>
   </InfoCard>
@@ -144,6 +144,7 @@ const to = computed(() => {
     flex-flow: column nowrap;
     gap: 0.5rem;
     background: white;
+    color: black;
     overflow-y: hidden;
     position: relative;
 

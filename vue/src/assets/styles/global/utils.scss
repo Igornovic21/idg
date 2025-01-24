@@ -1,7 +1,9 @@
 .container {
   width: var(--dim-container-w);
   margin: 0 auto;
-  max-width: calc(100% - 3rem);
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
   
   &--transition {
     transition: all .1s ease-in;
@@ -57,7 +59,7 @@
   margin-top: 1.5rem;
   padding-left: var(--dim-half-circle-offset);
 
-  & ~ * {
+  &~* {
     padding-left: var(--dim-half-circle-offset);
   }
 
@@ -113,9 +115,7 @@
       }
     }
   }
-}
 
-@media (max-width: $bp-lg) {
   button.fixed-btn {
     position: fixed;
     bottom: 0;

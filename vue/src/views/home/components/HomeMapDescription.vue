@@ -15,7 +15,7 @@
           :label="$t(`home.map.bullets.${bullet}.label`)"
           :description="$t(`home.map.bullets.${bullet}.description`)"
           :highlighted="true"
-          :highlight-color="'white'"
+          :highlight-color="'rgb(var(--v-theme-main-yellow)'"
         />
         <v-btn class="mt-4 hide-mobile" color="main-blue" :to="{ name: 'map' }">{{
           $t('home.map.action')
@@ -78,7 +78,7 @@ const bullets = ['overview', 'simpleMaps', 'geodata', 'thematics', 'way']
     }
 
     .HomeMapDescription__welcomeCtn {
-      background: rgb(var(--v-theme-light-yellow)) url(@/assets/images/Frise.svg) no-repeat top
+      background: rgb(var(--v-theme-main-blue)) url(@/assets/images/Frise.svg) no-repeat top
         center;
       background-attachment: local;
       background-size: 100% 1rem;
@@ -92,9 +92,9 @@ const bullets = ['overview', 'simpleMaps', 'geodata', 'thematics', 'way']
       padding: 2rem 1.5rem 1rem 1.5rem;
       position: absolute;
       transform: translateY(11rem);
-
+      color: #fff;
       h4 {
-        color: rgb(var(--v-theme-main-red));
+        color: rgb(var(--v-theme-main-yellow));
         font-size: $font-size-h3;
       }
 

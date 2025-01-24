@@ -1,9 +1,6 @@
 <template>
   <div class="ContactCard">
-    <div
-      class="ContactCard__photo"
-      :style="'background: url(' + image + ') center no-repeat'"
-    ></div>
+    <div class="ContactCard__photo" :style="'background: url(' + image + ') center no-repeat'"></div>
     <div class="ContactCard__infoCtn">
       <div class="ContactCard__name">{{ name }}</div>
       <div class="ContactCard__description">{{ description }}</div>
@@ -13,10 +10,10 @@
 
 <script setup lang="ts">
 defineProps<{
-  name: string
-  description: string
-  image: string
-}>()
+  name: string;
+  description: string;
+  image: string;
+}>();
 </script>
 
 <style lang="scss">
@@ -44,8 +41,7 @@ defineProps<{
       font-weight: 700;
     }
 
-    .ContactCard__description {
-    }
+    .ContactCard__description {}
   }
 }
 </style>

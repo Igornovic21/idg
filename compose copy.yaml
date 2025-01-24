@@ -1,0 +1,123 @@
+services:
+  vue:
+    build:
+      context: ./vue
+      target: vue_dev
+      args:
+        - VITE_DOMAIN=${DOMAIN}
+    image: vue:latest
+    restart: on-failure
+    ports:
+      - 6001:3000
+    volumes:
+      - ./vue:/app:rw,cached
+      - vue_node_modules:/app/node_modules:rw,cached
+
+  frankenphp:
+    build:
+      context: ./symfony
+    image: ${COMPOSE_PROJECT_NAME}-frankenphp
+    restart: unless-stopped
+    environment:
+      SERVER_NAME: ${DOMAIN:-localhost}, frankenphp:6006
+      TRUSTED_PROXIES: ${TRUSTED_PROXIES:-127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16}
+      TRUSTED_HOSTS: ${TRUSTED_HOSTS:-^${DOMAIN:-puc\.local|localhost}|frankenphp$$}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-app}:${POSTGRES_PASSWORD:-!ChangeMe!}@${POSTGRES_HOST:-postgres}:6000/${POSTGRES_DB:-app}?serverVersion=${POSTGRES_VERSION:-16}&charset=${POSTGRES_CHARSET:-utf8}
+      VUE_PORT: 6001
+      DOCS_PORT: 6002
+      QGIS_SERVER_PORT: 6007
+      NOMINATIM_PORT: 6003
+      DOMAIN: ${DOMAIN}
+      CADDY_PROTOCOL: ${CADDY_PROTOCOL:-https}
+      HTTP_PORT: 6006
+      HTTPS_PORT: 6005
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - postgres
+      - vue
+      - qgis
+      - docs
+    ports:
+      - 6006:80
+      - 6005:443
+      - 6005:443/udp
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+
+  docs:
+    build:
+      context: ./docs
+      target: docs_dev
+    image: docs:latest
+    restart: on-failure
+    ports:
+      - 6002:5000
+    volumes:
+      - ./docs:/app:rw,cached
+      - docs_node_modules:/app/node_modules:rw,cached
+
+  postgres:
+    image: postgis/postgis:${POSTGIS_VERSION:-16-3.5}-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+      PGPORT: 6000
+    healthcheck:
+      test: ["CMD", "pg_isready", "-d", "${POSTGRES_DB:-app}", "-U", "${POSTGRES_USER:-app}"]
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+    ports:
+      - 6000:5432
+    volumes:
+      - ./docker/postgres/data:/var/lib/postgresql/data:rw
+
+  nominatim:
+    image: mediagis/nominatim:4.2
+    ports:
+      - 6003:8080
+    environment:
+      # see https://github.com/mediagis/nominatim-docker/tree/master/4.2#configuration for more options
+      PBF_URL: https://download.geofabrik.de/africa/cameroon-latest.osm.pbf
+      REPLICATION_URL: https://download.geofabrik.de/africa/cameroon-updates/
+      NOMINATIM_PASSWORD: ${NOMINATIM_PASSWORD:-very_secure_password}
+    volumes:
+      - nominatim-data:/var/lib/postgresql/14/main
+    shm_size: 1gb
+
+  qgis:
+    image: qgis/qgis-server:${QGIS_SERVER_VERSION:-ltr}
+    environment:
+      # Do not run the embedded copy of nginx
+      # SKIP_NGINX: "true"
+      # Improve rendering performance
+      QGIS_SERVER_PARALLEL_RENDERING: "true"
+      QGIS_SERVER_MAX_THREADS: 4
+      # Limit the maximum size returned by a GetMap
+      QGIS_SERVER_WMS_MAX_HEIGHT: 5000
+      QGIS_SERVER_WMS_MAX_WIDTH: 5000
+      # Enable logging
+      # QGIS_SERVER_LOG_LEVEL: 0
+      # QGIS_SERVER_LOG_PROFILE: "true"
+    ports:
+      - 6007:80
+    volumes:
+     # Data should be mount RO when working
+     # with GeoPackages and more than one QGIS container
+      - ./docker/qgis/data:/io/data:ro
+      - ./docker/qgis/plugins:/io/plugins
+      - ./docker/qgis/svg:/var/lib/qgis/.local/share/QGIS/QGIS3/profiles/default/svg
+      # - ./docker/qgis/fonts:/usr/share/fonts # Causing nginx 404 issues
+      # - ./conf/pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
+    restart: on-failure
+
+volumes:
+  caddy_data:
+  caddy_config:
+  vue_node_modules:
+  docs_node_modules:
+  database_data:
+  nominatim-data:

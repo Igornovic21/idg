@@ -98,7 +98,8 @@ const editResource = () => {
 <style lang="scss">
 .ResourceCard {
   .InfoCard__subTitle {
-    font-weight: 500 !important;
+    font-weight: 400 !important;
+    color: rgb(var(--v-theme-main-blue)) !important;
   }
   .ResourceCard__dateBanner {
     background: rgb(var(--v-theme-main-yellow));

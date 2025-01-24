@@ -1,8 +1,8 @@
 {
     "home": {
         "main": {
-            "title": "L'urbanisme\nau Cameroun",
-            "desc": "La Plateforme Urbaine est une source incontournable pour explorer, télécharger et exploiter des données géographiques et ouvertes sur les projets urbains du Cameroun. Elle présente une vision claire des acteurs et des initiatives qui façonnent nos villes.",
+            "title": "Données\ngéographiques\ndu Wouri",
+            "desc": "L'infrastructure de données géographiques est une source incontournable pour explorer, télécharger et exploiter des données géographiques et ouvertes sur les projets urbains de la ville de Douala. Elle présente une vision claire des acteurs et des initiatives qui façonnent nos villes.",
             "action": "Découvrir les projets"
         },
         "news": {
@@ -10,11 +10,11 @@
             "action": "Toutes les actualités"
         },
         "map": {
-            "title": "La carte interactive\ndu Cameroun",
+            "title": "La carte interactive\ndu Wouri",
             "bullets": {
                 "overview": {
                     "label": "Bénéficiez d’une vue d’ensemble des projets et des acteurs",
-                    "description": "Localisez les projets d’infrastructure et de développement urbain pour faciliter la collaboration et la coordination au Cameroun."
+                    "description": "Localisez les projets d’infrastructure et de développement urbain pour faciliter la collaboration et la coordination dans la ville de Douala."
                 },
                 "simpleMaps": {
                     "label": "Construisez votre carte facilement",
@@ -36,7 +36,7 @@
             "action": "Accéder au Géoportail",
             "availableOnDesktop": "Disponible sur ordinateur",
             "welcome": "Bienvenue",
-            "welcomeDescription": "Composez votre carte thématique grâce aux différents données mises à disposition sur la Plateforme Urbaine du Cameroun."
+            "welcomeDescription": "Composez votre carte thématique grâce aux différents données mises à disposition sur l'infrastructure de données géographiques de la ville de Douala"
         },
         "agenda": {
             "title": "Agenda",

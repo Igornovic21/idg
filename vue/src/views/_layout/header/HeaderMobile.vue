@@ -64,76 +64,79 @@ const appStore = useApplicationStore()
 const showMobileMenu = ref(false)
 </script>
 
+
 <style lang="scss">
+
 .Header {
-  &--mobile {
-    height: $header-mobile-height;
-    margin-top: $header-mobile-height;
 
-    &::after {
-      width: 100%;
-      max-height: 30rem;
-      height: 60vh;
-    }
-
-    .Header__appLogo {
-      border: 1px solid rgb(var(--v-theme-main-grey));
-      border-radius: 10%;
-      padding: 5px;
-      height: 40px;
-    }
-
-    .Header__tabsText {
-      color: rgb(var(--v-theme-main-blue));
-      font-weight: 600;
-      text-transform: none;
-      text-decoration: none;
-
-      &--active {
-        color: rgb(var(--v-theme-main-red));
-      }
-    }
-
-    .Header__menu {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100vh;
-      z-index: 2000;
-
-      &__top {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        background-color: white;
-        height: 200px;
-
-        img {
-          height: 160px;
+    &--mobile {
+        height: $header-mobile-height;
+        margin-top: $header-mobile-height;
+        
+        &::after {
+            width: 100%;
+            max-height: 30rem;
+            height: 60vh;
         }
-      }
-
-      &__closer {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 2001;
-        color: rgb(var(--v-theme-main-blue));
-      }
-
-      &__content {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background-color: rgb(var(--v-theme-light-yellow));
-        flex-grow: 1;
-        padding: $mobile-side-padding;
-      }
+    
+        .Header__appLogo {
+            border: 1px solid rgb(var(--v-theme-main-grey));
+            border-radius: 10%;
+            padding: 5px;
+            height: 40px;
+        }
+    
+        .Header__tabsText {
+            color: rgb(var(--v-theme-main-blue));
+            font-weight: 600;
+            text-transform: none;
+            text-decoration: none;
+    
+            &--active{
+                color: rgb(var(--v-theme-main-red));
+            }
+        }
+    
+        .Header__menu {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            z-index: 2000;
+    
+            &__top {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                background-color: white;
+                height: 200px;
+            
+                img {
+                   height: 160px; 
+                }
+            }
+    
+            &__closer{
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                z-index: 2001;
+                color: rgb(var(--v-theme-main-blue));
+            }
+    
+            &__content{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgb(var(--v-theme-light-blue));
+                flex-grow: 1;
+                padding: $mobile-side-padding;
+            }
+        }
     }
-  }
 }
 </style>
