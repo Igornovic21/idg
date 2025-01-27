@@ -16,7 +16,7 @@ To setup your local env project (Only the first time)
 ``` bash
 # Clone your project
 # ⚠️ On Windows make sure you are cloning it from your WSL environnement
-git clone git@github.com:CartONG/plateforme-urbaine-cameroun.git puc && cd puc
+git clone git@github.com:GeOsmFamily/IDG_Douala.git idg && cd idg
 
 # Build and pull your docker images 🐋 & setup your hosts local domains
 make init

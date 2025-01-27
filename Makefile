@@ -76,20 +76,20 @@ show-urls:
 	@printf "${BLUE}+-------------------------------------------------+\n"
 	@printf "${BLUE}| Cameroon Urban Platform                         |\n"
 	@printf "${BLUE}+-------------------------------------------------+\n"
-	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "🚀  Main website" 	"https://puc.local"
-	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "🔒  REST API Doc" 			"https://puc.local/api/docs"
-	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "🔭  Nominatim API" 			"https://puc.local/nominatim"
-	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "🌍  QGIS server" 	 	"https://qgis.puc.local"
-	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "📨  SMTP server" 		"https://mail.puc.local"
-	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "💡  Documentation" 	"https://docs.puc.local"
+	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "🚀  Main website" 	"https://idg.local"
+	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "🔒  REST API Doc" 			"https://idg.local/api/docs"
+	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "🔭  Nominatim API" 			"https://idg.local/nominatim"
+	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "🌍  QGIS server" 	 	"https://qgis.idg.local"
+	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "📨  SMTP server" 		"https://mail.idg.local"
+	@printf "${BLUE}| ${BLUE}%-19s ${BLUE}| ${LIGHT_BLUE}%-27s${BLUE} |\n" "💡  Documentation" 	"https://docs.idg.local"
 	@printf "${BLUE}+-------------------------------------------------+${NC}\n"
 	@echo ""
 
 HOST_ENTRIES = \
-  "127.0.0.1     puc.local"\
-  "127.0.0.1     qgis.puc.local"\
-  "127.0.0.1     docs.puc.local"\
-  "127.0.0.1     mail.puc.local"
+  "127.0.0.1     idg.local"\
+  "127.0.0.1     qgis.idg.local"\
+  "127.0.0.1     docs.idg.local"\
+  "127.0.0.1     mail.idg.local"
 
 init-hosts:
 	@printf "${YELLOW}----------------------------------------------------${NC}\n"

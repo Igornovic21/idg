@@ -3,14 +3,14 @@ services:
     ports: !override
       - ${HTTP_PORT:-80}:80
     networks:
-      - puc-network
+      - idg-network
   postgres:
     networks:
-      - puc-network
+      - idg-network
   nominatim:
     networks:
-      - puc-network
+      - idg-network
 
 networks:
-  puc-network:
-    name: puc_network
+  idg-network:
+    name: idg_network

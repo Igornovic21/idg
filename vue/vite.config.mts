@@ -17,8 +17,8 @@ export default defineConfig({
       autoImport: true
     }),
     sentryVitePlugin({
-      org: 'cartong',
-      project: 'puc-vue',
+      org: 'sogefi',
+      project: 'idg-vue',
       authToken: process.env.SENTRY_AUTH_TOKEN
     })
   ],

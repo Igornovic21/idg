@@ -20,11 +20,11 @@ services:
       - ./symfony/docker/caddy/Caddyfile.prod:/etc/caddy/Caddyfile
       - ./symfony/docker/caddy/worker.Caddyfile:/etc/caddy/worker.Caddyfile
     networks:
-      - puc-network
+      - idg-network
   nominatim:
     networks:
-      - puc-network
+      - idg-network
 
 networks:
-  puc-network:
-    name: puc_network
+  idg-network:
+    name: idg_network

@@ -54,7 +54,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/CartONG/plateforme-urbaine-cameroun' }
+      { icon: 'github', link: 'https://github.com/GeOsmFamily/IDG_Douala' }
     ]
   }
 })
